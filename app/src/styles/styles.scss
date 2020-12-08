@@ -1,0 +1,11 @@
+.loading {
+    margin: auto;
+    text-align: center;
+    height: calc(100vh - 63px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 400px;
+    }
+  }
