@@ -1,6 +1,8 @@
 .loading {
   margin: auto;
   text-align: center;
+  display: block;
+  margin: 0 auto;
   height: calc(100vh - 63px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,6 +16,16 @@
 }
 
 .loading img {
-  width: 400px;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.text{
+  text-align: center
+}
+
+.wrapper{
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

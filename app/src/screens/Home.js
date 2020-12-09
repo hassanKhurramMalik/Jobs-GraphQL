@@ -3,7 +3,8 @@ import { useQuery } from "@apollo/react-hooks";
 import GET_JOBS from "../queries/index";
 import Card from "../components/Card";
 import loading from "../assets/loading.gif";
-import "../styles/styles.css";
+import "../styles/loading.css";
+import "../styles/search.css";
 
 const Home = () => {
   const [text, setText] = useState("");
@@ -41,18 +42,26 @@ const Home = () => {
     <div>
       {isEmpty ? (
         <div className="loading">
-          <img src={loading} alt="loading" />
+          <img src={loading} alt="Loading" />
         </div>
       ) : (
         <div>
-          <input
-            placeholder="Search Title"
-            type="text"
-            name="text"
-            onChange={(e) => {
-              setText(e.target.value);
-            }}
-          />
+          <div className="display">
+            <div className="wrap">
+              <div className="search">
+                <input
+                  placeholder="Search Title"
+                  type="text"
+                  name="text"
+                  className="searchTerm"
+                  onChange={(e) => {
+                    setText(e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <br />
           {filterData?.map((job) => (
             <Card key={job.id} jobs={job} />
           ))}
@@ -61,5 +70,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
