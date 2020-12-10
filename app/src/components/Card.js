@@ -30,7 +30,7 @@ class Card extends React.Component {
             </div>
             <br />
             <div className="textEllipsis">
-              <b>Description:</b> {this.props.jobs.description}
+              <b>Desc:</b> {this.props.jobs.description}
             </div>
           </div>
         </div>
