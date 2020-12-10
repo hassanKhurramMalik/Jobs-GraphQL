@@ -1,26 +1,24 @@
-import React from 'react'
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from '@apollo/react-hooks'
-import Home from './screens/Home'
-import Details from './screens/Details'
-//import Client from './ApolloProvider/index'
-import {Route, BrowserRouter, Switch} from 'react-router-dom'
+import React from "react";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+import { Switch, BrowserRouter, Route } from "react-router-dom";
+import Routes from "./routes/index";
 
-const App=()=> {
+const App = () => {
   const client = new ApolloClient({
-    uri: 'https://api.graphql.jobs/',
-  })
+    uri: "https://api.graphql.jobs/",
+  });
   return (
     <ApolloProvider client={client}>
-        <BrowserRouter>
-            <Switch>
-                <Route path="/" component={Home} exact={true} />
-                <Route path="/details/:id" component={Details} exact={true}/>
-            </Switch>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Switch>
+          {Routes.map((route) => (
+            <Route key={`route-${route.name}`} {...route} />
+          ))}
+        </Switch>
+      </BrowserRouter>
     </ApolloProvider>
-    
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "../styles/card.css";
 
+
 class Card extends React.Component {
   render() {
     return (

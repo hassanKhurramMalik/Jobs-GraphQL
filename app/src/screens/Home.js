@@ -23,20 +23,6 @@ const Home = () => {
     }
     // eslint-disable-next-line
   }, [text]);
-  //   const JobsFound=jobs.map((jobs) => {
-  //     if(text!==''){
-  //       const len=text.length
-  //       if(text.toLowerCase()===jobs.title.toLowerCase().substring(0, len)){
-  //     return(
-  //     <Card key={jobs.id} jobs={jobs} />
-  //     )
-  //       }
-  //     }
-  //     else  return(
-  //       <Card key={jobs.id} jobs={jobs} />
-  //       )
-  // })
-
   const isEmpty = jobs.length === 0;
   return (
     <div>
@@ -71,3 +57,17 @@ const Home = () => {
   );
 };
 export default Home;
+
+//   const JobsFound=jobs.map((jobs) => {
+//     if(text!==''){
+//       const len=text.length
+//       if(text.toLowerCase()===jobs.title.toLowerCase().substring(0, len)){
+//     return(
+//     <Card key={jobs.id} jobs={jobs} />
+//     )
+//       }
+//     }
+//     else  return(
+//       <Card key={jobs.id} jobs={jobs} />
+//       )
+// })
