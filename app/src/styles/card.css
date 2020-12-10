@@ -1,8 +1,9 @@
 .cardImg {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
+    transition: 1s;
     background-color: #800000;
-    border: 8px solid black;
+    border: 4px solid black;
     color: white;
     border-right: none;
     width: 50%;
@@ -10,8 +11,9 @@
   .cardText {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
+    transition: 1s;
     background-color: #202020;
-    border: 8px solid black;
+    border: 4px solid black;
     color: white;
     border-left: none;
     width: 50%;
@@ -31,10 +33,12 @@
  }
   .cardWrapper{
       display: flex;
+      transition: all 1s;
   }
   .cardWrapper:hover {
-    opacity: 0.8;
-    cursor: pointer;
+   cursor: pointer;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+   
   }
   .textEllipsis{
     overflow: hidden;
@@ -43,4 +47,16 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
-  
+  @media screen and (max-width:768px){
+    .cardWrapper{
+      display: block;
+    }
+    .cardImg{
+     width:100%;
+     border: 4px solid black;
+    }
+    .cardText{
+     width:100%;
+     border: 4px solid black;
+    }
+  }

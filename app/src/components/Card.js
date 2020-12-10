@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "../styles/card.css";
 
-
 class Card extends React.Component {
   render() {
     return (
@@ -30,7 +29,7 @@ class Card extends React.Component {
             </div>
             <br />
             <div className="textEllipsis">
-              <b>Desc:</b> {this.props.jobs.description}
+              <b>Description:</b> {this.props.jobs.description}
             </div>
           </div>
         </div>
