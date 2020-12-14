@@ -16,7 +16,6 @@ const GET_JOBS = gql`
       }
       company {
         name
-        logoUrl
       }
     }
   }
