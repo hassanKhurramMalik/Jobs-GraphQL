@@ -7,7 +7,7 @@ import getImage from "../utils/GetImage";
 const Card = (props) => {
   const img = getImage(props.jobs.title);
   return (
-    <div>
+    <div className="parent">
       <div
         className="jobCard"
         onClick={() => {
@@ -23,10 +23,17 @@ const Card = (props) => {
               <img src={img} alt="Pic" />
             </div>
           </Col>
-          <Col xs={12} sm={12} md={6}>
+          <Col
+            xs={12}
+            sm={12}
+            md={6}
+            style={{
+              alignItems: "center",
+              display: "flex",
+            }}
+          >
             <div>
               <div className="text">{props.jobs.title}</div>
-              <br />
               <div className="textEllipsis">{props.jobs.description}</div>
             </div>
           </Col>

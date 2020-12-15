@@ -1,17 +1,16 @@
 .search {
     width: 100%;
-    position: relative;
-    display: flex;
   }
   
   .searchTerm {
     width: 100%;
-    border: 1px solid #333745;;
-    padding: 5px;
-    height: 20px;
-    border-radius: 2px 0 0 2px;
+    border: 1px solid #d3d3d3;
+    padding: 6px;
+    height: auto;
     outline: none;
     color: #9DBFAF;
+    font-size: 20px;
+    font-weight: 400;
   }
   .searchTerm:hover {
     opacity: 0.8;
@@ -23,17 +22,15 @@
   .wrap{
     width: 30%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   .display{
     padding: 0.8rem;
     position:relative;
-    margin:0 auto;
+    margin: 10px;
     clear:left;
     height:auto;
-    z-index: 0;
-    text-align:center;
+   
   }
- 
+ .page{
+   margin: 16px;
+ }
