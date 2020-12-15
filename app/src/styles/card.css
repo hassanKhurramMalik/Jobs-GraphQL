@@ -23,15 +23,15 @@
  .text{
    margin-top: 8px;
    margin-left: 8px;
-  font-size: 24px;
+  font-size: 28px;
  }
   .textEllipsis{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 8;
+    -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
-    font-size: 20px;
+    font-size: 24px;
     margin-top: 8px;
     margin-left: 8px;
   }

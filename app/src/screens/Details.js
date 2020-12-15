@@ -20,26 +20,30 @@ const Button = styled.button`
   color: ${(props) => props.inputC || "black"};
 `;
 const Details = (props) => {
-  const job = props.history.location.state.detail;
-  return (
-    <div className="card">
-      <div className="card-inner">
-        <DisplayHeader header="Details" />
-        <DisplayDetails content={job.title} />
-        <DisplayDetails content={job.company.name} />
-        <DisplayCities content={job.cities} />
-        <DisplayDescription content={job.description} />
-        <Button
-          onClick={() => {
-            window.open(job.applyUrl);
-          }}
-          inputC="#2c2c2c"
-        >
-          Apply
-        </Button>
+  if (props.history.location.state) {
+    const job = props.history.location.state.detail;
+    return (
+      <div className="card">
+        <div className="card-inner">
+          <DisplayHeader header="Details" />
+          <DisplayDetails content={job.title} />
+          <DisplayDetails content={job.company.name} />
+          <DisplayCities content={job.cities} />
+          <DisplayDescription content={job.description} />
+          <Button
+            onClick={() => {
+              window.open(job.applyUrl);
+            }}
+            inputC="#2c2c2c"
+          >
+            Apply
+          </Button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <div>Page not found</div>;
+  }
 };
 
 export default Details;

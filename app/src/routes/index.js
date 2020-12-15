@@ -1,5 +1,6 @@
 import Home from "../screens/Home";
 import Details from "../screens/Details";
+import Error from "../screens/Error";
 const Routes = [
   {
     path: "/",
@@ -12,6 +13,10 @@ const Routes = [
     name: "Details",
     exact: true,
     component: Details,
+  },
+  {
+    name: "Error",
+    component: Error,
   },
 ];
 
