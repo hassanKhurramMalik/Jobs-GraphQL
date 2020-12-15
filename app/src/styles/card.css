@@ -1,46 +1,54 @@
-.cardImg {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    background-color: #800000;
-    border: 8px solid black;
-    color: white;
-    border-right: none;
-    width: 50%;
+  .jobCard {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    transition: 0.2s;
+    background-color: white;
+    border: 0px solid black;
+    color: black;
+    border-radius: 8px;
+    margin: 0px 20px;
   }
-  .cardText {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    background-color: #202020;
-    border: 8px solid black;
-    color: white;
-    border-left: none;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  .parent{
+    margin: 5px;
+  }
+  .jobCard:hover{
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    transition: all 0.5s;
   }
  .imgLeft{
-     text-align: left;
+     padding: 8px;
  }
  img{
-     width:80%;
+     width: 100%;
+     height: auto;
  }
  .text{
-     text-align: center;
+   margin: 8px 8px 24px 8px;
+   font-weight: 800;
+   font-size: 28px;
+   align-items: center;
+   justify-content: center;
+   text-align:center;
  }
-  .cardWrapper{
-      display: flex;
-  }
-  .cardWrapper:hover {
-    opacity: 0.8;
-    cursor: pointer;
-  }
   .textEllipsis{
+    margin: 8px  20px 8px 8px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
-  }
+    font-size: 20px;
   
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+  }
+  @media only screen and (max-width: 767px) {
+    .text {
+      font-size: 24px;
+    }
+    .textEllipsis{
+      font-size: 18px;
+    }
+  }

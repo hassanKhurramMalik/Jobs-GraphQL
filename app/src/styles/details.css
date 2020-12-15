@@ -9,14 +9,22 @@
 .content{
     text-align: justify;
     font-size: 14;
+    padding: 19px;
+    background-color: #fbfbfb;
+    margin-right: 20px;
+    border-radius: 13px;
+    margin-top: 10px;
+    color: darkslategrey;
 }
 details > summary {
     padding: 4px;
-    width: 200px;
+    width: 150px;
     background-color: #eeeeee;
     border: none;
     box-shadow: 1px 1px 2px #bbbbbb;
     cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
   }
   
   details > p {
@@ -25,3 +33,26 @@ details > summary {
     margin: 0;
     box-shadow: 1px 1px 2px #bbbbbb;
   }
+  .card{
+    width: 80%;
+    background: whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    font-family: sans-serif;
+    transition: all 1s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .card:hover{
+    -webkit-box-shadow: 0px 0px 10px 10px rgba(166,166,171,1);
+    -moz-box-shadow: 0px 0px 10px 10px rgba(166,166,171,1);
+    box-shadow: 0px 0px 10px 10px rgba(166,166,171,1);
+    transform: scale(1.01);
+  }
+  .card-inner{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  
