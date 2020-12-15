@@ -31,7 +31,7 @@ const Home = () => {
           <img src={loading} alt="Loading" />
         </div>
       ) : (
-        <div>
+        <div className="page">
           <div className="display">
             <div className="wrap">
               <div className="search">
@@ -42,6 +42,7 @@ const Home = () => {
                   className="searchTerm"
                   onChange={(e) => {
                     setText(e.target.value);
+                    e.target.value === "" && setFilterData(jobs);
                   }}
                 />
               </div>

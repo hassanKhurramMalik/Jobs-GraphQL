@@ -19,10 +19,7 @@
   width: 100px;
   display: block;
   margin: 0 auto;
-}
-
-.text{
-  text-align: center
+  height: auto;
 }
 
 .wrapper{

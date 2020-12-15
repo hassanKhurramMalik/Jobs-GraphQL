@@ -1,34 +1,49 @@
 import React from "react";
+import DisplayHeader from "../components/DisplayHeader";
+import DisplayDetails from "../components/DisplayDetails";
+import DisplayCities from "../components/DisplayCities";
+import DisplayDescription from "../components/DisplayDescription";
+import styled from "styled-components";
 import "../styles/details.css";
 
-class Details extends React.Component {
-  render() {
-    const job = this.props.history.location.state.detail;
+const Button = styled.button`
+  font-family: Hack, monospace;
+  background: #d3d3d3;
+  cursor: pointer;
+  font-size: 1.5em;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 5px;
+  width: auto;
+  position: relative;
+  min-width: 158px;
+  color: ${(props) => props.inputC || "black"};
+`;
+const Details = (props) => {
+  if (props.history.location.state) {
+    const job = props.history.location.state.detail;
     return (
-      <div>
-        <h1 className="details">Details</h1>
-        <h3 className="heading">Title</h3>
-        <div className="content">{job.title}</div>
-        <br />
-        <h3 className="heading">Company</h3>
-        <div className="content">{job.company.name}</div>
-        <br />
-        <h3 className="heading">Cities</h3>
-        <div className="content">
-          <ul>
-            {job.cities.map((city) => (
-              <li key={city.name}>{city.name}</li>
-            ))}
-          </ul>
+      <div className="card">
+        <div className="card-inner">
+          <DisplayHeader header="Details" />
+          <DisplayDetails content={job.title} />
+          <DisplayDetails content={job.company.name} />
+          <DisplayCities content={job.cities} />
+          <DisplayDescription content={job.description} />
+          <Button
+            onClick={() => {
+              window.open(job.applyUrl);
+            }}
+            inputC="#2c2c2c"
+          >
+            Apply
+          </Button>
         </div>
-        <br />
-        <details>
-          <summary className="heading">Description</summary>
-          <p className="content">{job.description}</p>
-        </details>
       </div>
     );
+  } else {
+    return <div>Page not found</div>;
   }
-}
+};
 
 export default Details;

@@ -1,10 +1,11 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 const GET_JOBS = gql`
   query {
     jobs {
       id
       description
+      applyUrl
       title
       cities {
         id
@@ -15,7 +16,6 @@ const GET_JOBS = gql`
       }
       company {
         name
-        logoUrl
       }
     }
   }
