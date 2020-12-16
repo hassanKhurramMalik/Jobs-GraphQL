@@ -5,6 +5,7 @@ const GET_JOBS = gql`
     jobs {
       id
       description
+      createdAt
       applyUrl
       title
       cities {

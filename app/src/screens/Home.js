@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import GET_JOBS from "../queries/index";
+import GET_JOBS from "../api/index";
 import Card from "../components/Card";
 import loading from "../assets/loading.gif";
 import "../styles/loading.css";
 import "../styles/search.css";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+import { Row, Col } from "react-flexbox-grid";
 
 const Home = () => {
   const [text, setText] = useState("");
@@ -23,6 +26,7 @@ const Home = () => {
     }
     // eslint-disable-next-line
   }, [text]);
+  const options = ["Ascending", "Descending"];
   const isEmpty = jobs.length === 0;
   return (
     <div>
@@ -33,22 +37,45 @@ const Home = () => {
       ) : (
         <div className="page">
           <div className="display">
-            <div className="wrap">
-              <div className="search">
+            <Row between="md">
+              <Col xs={12} md={3}>
                 <input
                   placeholder="Search Title"
                   type="text"
                   name="text"
+                  style={{ marginBottom: "10px" }}
                   className="searchTerm"
                   onChange={(e) => {
                     setText(e.target.value);
                     e.target.value === "" && setFilterData(jobs);
                   }}
                 />
-              </div>
-            </div>
+              </Col>
+              <Col xs={12} md={3}>
+                <Dropdown
+                  className="dropdown"
+                  options={options}
+                  value="Sort By"
+                  placeholder="Sort"
+                  onChange={(e) => {
+                    if (e.value === options[0]) {
+                      const sorted = jobs.sort((a, b) => {
+                        return new Date(a.createdAt) - new Date(b.createdAt);
+                      });
+                      setFilterData(sorted);
+                      setText(" ");
+                    } else if (e.value === options[1]) {
+                      const sorted = jobs.sort((a, b) => {
+                        return new Date(b.createdAt) - new Date(a.createdAt);
+                      });
+                      setFilterData(sorted);
+                      setText("G");
+                    }
+                  }}
+                />
+              </Col>
+            </Row>
           </div>
-          <br />
           {filterData?.map((job) => (
             <Card key={job.id} jobs={job} />
           ))}

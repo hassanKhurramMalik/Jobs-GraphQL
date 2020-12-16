@@ -5,6 +5,7 @@ import { Row, Col } from "react-flexbox-grid";
 import getImage from "../utils/GetImage";
 
 const Card = (props) => {
+  let date = new Date(props.jobs.createdAt).toDateString();
   const img = getImage(props.jobs.title);
   return (
     <div className="parent">
@@ -18,23 +19,16 @@ const Card = (props) => {
         }}
       >
         <Row>
-          <Col xs={12} sm={12} md={6}>
+          <Col xs={12} md={6}>
             <div className="imgLeft">
               <img src={img} alt="Pic" />
             </div>
           </Col>
-          <Col
-            xs={12}
-            sm={12}
-            md={6}
-            style={{
-              alignItems: "center",
-              display: "flex",
-            }}
-          >
+          <Col xs={12} md={6}>
             <div>
               <div className="text">{props.jobs.title}</div>
               <div className="textEllipsis">{props.jobs.description}</div>
+              <div className="date">{date}</div>
             </div>
           </Col>
         </Row>

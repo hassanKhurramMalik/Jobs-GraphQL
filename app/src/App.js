@@ -1,13 +1,10 @@
 import React from "react";
-import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Routes from "./routes/index";
+import client from "./client/index";
 
 const App = () => {
-  const client = new ApolloClient({
-    uri: "https://api.graphql.jobs/",
-  });
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>

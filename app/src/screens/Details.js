@@ -7,13 +7,13 @@ import styled from "styled-components";
 import "../styles/details.css";
 
 const Button = styled.button`
-  font-family: Hack, monospace;
+  font-family: Sans-Serif;
   background: #d3d3d3;
   cursor: pointer;
-  font-size: 1.5em;
+  font-size: 20px;
   border: 0;
   transition: all 0.5s;
-  border-radius: 5px;
+  border-radius: 2px;
   width: auto;
   position: relative;
   min-width: 158px;
@@ -30,7 +30,7 @@ const Details = (props) => {
           <DisplayDetails content={job.company.name} />
           <DisplayCities content={job.cities} />
           <DisplayDescription content={job.description} />
-          <Button
+          <Button className='Button'
             onClick={() => {
               window.open(job.applyUrl);
             }}

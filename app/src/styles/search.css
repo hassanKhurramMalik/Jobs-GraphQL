@@ -1,9 +1,6 @@
-.search {
-    width: 100%;
-  }
-  
+
   .searchTerm {
-    width: 100%;
+    width: -webkit-fill-available;
     border: 1px solid #d3d3d3;
     padding: 6px;
     height: auto;
@@ -11,6 +8,7 @@
     color: #9DBFAF;
     font-size: 20px;
     font-weight: 400;
+   
   }
   .searchTerm:hover {
     opacity: 0.8;
@@ -18,19 +16,25 @@
   .searchTerm:focus{
     color: black;
   }
-  
-  .wrap{
-    width: 30%;
-    position: absolute;
-  }
   .display{
+  
     padding: 0.8rem;
     position:relative;
     margin: 10px;
-    clear:left;
     height:auto;
    
+    
   }
  .page{
    margin: 16px;
  }
+ .date{
+   float: right;
+   color: gray;
+   margin-right: 20px;
+   padding-bottom: 10px;
+ }
+@media only screen and (max-width:767){
+
+
+}
