@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
+import Dropdown from "react-dropdown";
+import { Row, Col } from "react-flexbox-grid";
 import GET_JOBS from "../api/index";
 import Card from "../components/Card";
 import loading from "../assets/loading.gif";
 import "../styles/loading.css";
 import "../styles/search.css";
-import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
-import { Row, Col } from "react-flexbox-grid";
 
 const Home = () => {
   const [text, setText] = useState("");
@@ -53,7 +53,7 @@ const Home = () => {
               </Col>
               <Col xs={12} md={3}>
                 <Dropdown
-                  className="dropdown"
+                  className="sort"
                   options={options}
                   value="Sort By"
                   placeholder="Sort"
